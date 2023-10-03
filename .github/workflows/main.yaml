@@ -9,17 +9,17 @@ on:
       - main
   workflow_dispatch:
 
-  jobs: 
-    hello: 
-      runs-on: ubuntu-latest
-      steps: 
-        - user: actions/checkout@v2
-        - name: demo git actions
-          run: echo "demo my first git actions!"
-          shell: bash
-    goodbye: 
-      runs-on: ubuntu-latest
-      steps: 
-        - name: done demo git actions
-          run: echo "done my first demo  git actions!"
-          shell: bash
+jobs: 
+  hello: 
+    runs-on: ubuntu-latest
+    steps: 
+      - user: actions/checkout@v2
+      - name: demo git actions
+        run: echo "demo my first git actions!"
+        shell: bash
+  goodbye: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: done demo git actions
+        run: echo "done my first demo  git actions!"
+        shell: bash
