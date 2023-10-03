@@ -10,15 +10,23 @@ on:
   workflow_dispatch:
 
 jobs: 
-  hello:
+  LOCAL:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
       - name: demo git actions
         run: echo "demo my first git actions!"
         shell: bash
-  goodbye: 
+  TEST: 
     runs-on: ubuntu-latest
+    needs: LOCAL
+    steps: 
+      - name: done demo git actions
+        run: echo "done my first demo  git actions!"
+        shell: bash
+  PROD: 
+    runs-on: ubuntu-latest
+    needs: TEST
     steps: 
       - name: done demo git actions
         run: echo "done my first demo  git actions!"
